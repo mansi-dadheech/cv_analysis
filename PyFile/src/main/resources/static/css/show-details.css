@@ -1,0 +1,45 @@
+
+
+.topnav  h2{
+    text-align : center;
+    font-size: 35px; 
+    font-family: 'Open Sans', sans-serif;
+    margin-top: -2%;
+    color: gray;
+}
+
+.topnav  a{
+    margin-left: 2px;
+    margin-top: 2px;
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: gray;
+}
+.topnav  a:hover{
+    border-bottom: 4px solid #007bff;
+    border-top: 4px solid #007bff;
+}
+
+.hr{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: .5%;
+    border: 0.1px solid #cccdce;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 20px;
+  
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 3px solid rgba(99, 96, 96, 0.8);
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+    box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
+
+  }

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	
+	<link rel="stylesheet" href="hpp.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Righteous&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Reggae+One&family=Righteous&display=swap" rel="stylesheet"> 
+    <title>House Price Prediction</title>
+</head>
+<body style="background-color: rgba(172, 94, 94, 0.596);">
+    <div class="image">
+		<h1 style="color: rgb(255, 255, 255); font-size: 90px; font-family: 'Righteous', cursive;" >House Price Prediction</h1>
+	</div>
+    <form class= "main-form" action="#" th:action="@{/save}" th:object="${house}" method="POST">
+			<p>
+			<label for="houstyle" style="color: black; font-size: 18px; font-family: 'Courgette', cursive;"><b>HouseStyle</b></label><br>
+			<select class="form-control" id="houstyle" th:field="*{houseStyle}">
+				<option>--Select--</option>
+				<option>2Story</option>
+				<option>1Story</option>
+				<option>1.5Fin</option>
+				<option>1.5Unf</option>
+				<option>SFoyer</option>
+				<option>SLvl</option>
+				<option>2.5Unf</option>
+				<option>2.5Fin</option>
+				<option>nan</option>
+			</select>
+			</p>
+			<p>
+				<label for="roofstyle" style="color: black; font-size: 18px; font-family: 'Courgette', cursive;"><b>RoofStyle</b></label><br>
+				<select class="form-control" id= 'roofstyle' th:field="*{roofStyle}">
+				<option>--Select--</option>
+				<option>Gable</option>
+				<option>Hip</option>
+				<option>Gambrel</option>
+				<option>Mansard</option>
+				<option>Flat</option>
+				<option>Shed</option>
+				<option>nan</option>
+				</select>
+			</p>
+			<p>
+				<label for="neighbor" style="color: black; font-size: 18px; font-family: 'Courgette', cursive;"><b>Neighborhood</b></label><br>
+				<select class="form-control" id= 'neighbor' th:field="*{neighbourhood}">
+					<option>--Select--</option>
+				<option>CollgCr</option>
+				<option>Veenker</option>
+				<option>Crawfor</option>
+				<option>NoRidge</option>
+				<option>Mitchel</option>
+				<option>Somerst</option>
+				<option>Gilbert</option>
+				<option>StoneBr</option>
+				<option>OldTown</option>
+				<option>Edwards</option>
+				<option>Timber</option>
+				<option>Blueste</option>
+				<option>nan</option>
+			  </select>   
+		    </p>
+			<p>
+				<label for="garage" style="color: black; font-size: 18px; font-family: 'Courgette', cursive;"><b>GarageType</b></label><br>
+				<select class="form-control" id= 'garage' th:field="*{garageType}">
+				<option>--Select--</option>
+				<option>Attchd</option>
+				<option>Detchd</option>
+				<option>BuiltIn</option>
+				<option>CarPort</option>
+				<option>Basment</option>
+				<option>nan</option>
+			  </select>   
+		    </p>
+			<p>
+				<label for="saletype" style="color: black; font-size: 18px; font-family: 'Courgette', cursive;"><b>SaleType</b></label><br>
+				<select class="form-control" id= 'saletype' th:field="*{saleType}">
+				<option>--Select--</option>
+				<option>WD</option>
+				<option>New</option>
+				<option>COD</option>
+				<option>ConLD</option>
+				<option>ConLI</option>
+				<option>CWD</option>
+				<option>ConLw</option>
+				<option>Con</option>
+				<option>Oth</option>
+				<option>nan</option>
+			</select>
+		 </p>
+		 <p>
+			<label for="salecondition" style="color: black; font-size: 18px; font-family: 'Courgette', cursive;"><b>SaleCondition</b></label><br>
+			<select class="form-control" id= 'salecondition' th:field="*{saleCondition}">
+				<option>--Select--</option>
+				<option>Normal</option>
+				<option>Abnorml</option>
+				<option>Partial</option>
+				<option>AdjLand</option>
+				<option>Alloca</option>
+				<option>Family</option>
+				<option>nan</option>
+				</select>
+		 </p>
+		 <p>
+			<label for="electrical" style="color: black; font-size: 18px; font-family: 'Courgette', cursive;"><b>Electrical</b></label><br>
+			<select class="form-control" id= 'electrical' th:field="*{electrical}">
+				<option>--Select--</option>
+				<option>SBrkr</option>
+				<option>FuseF</option>
+				<option>FuseA</option>
+				<option>FuseP</option>
+				<option>Mix</option>
+				<option>nan</option>
+			</select>
+		 </p>
+         <p>
+			<label for="heating" style="color: black; font-size: 18px; font-family: 'Courgette', cursive;"><b>Heating</b></label><br>
+			<select class="form-control" id= 'heating' th:field="*{heating}">
+				<option>--Select--</option>
+					<option>GasA</option>
+					<option>GasW</option>
+					<option>Grav</option>
+					<option>Wall</option>
+					<option>OthW</option>
+					<option>Floor</option>
+					<option>nan</option>
+			</select>
+		 </p>
+         <p>
+			<label for="KitchenQual" style="color: black; font-size: 18px; font-family: 'Courgette', cursive;"><b>KitchenQual</b></label><br>
+			<select class="form-control" id= 'KitchenQual' th:field="*{kitchenQual}">
+				<option>--Select--</option>
+				<option>Gd</option>
+				<option>TA</option>
+				<option>Ex</option>
+				<option>Fa</option>
+				<option>nan</option>
+			</select>
+		 </p>
+         <p>
+			<label for="misc" style="color: black; font-size: 18px; font-family: 'Courgette', cursive;"><b>MiscFeature</b></label><br>
+			<select class="form-control" id= 'misc' th:field="*{misc}">
+				<option>--Select--</option>
+				<option>Shed</option>
+				<option>Gar2</option>
+				<option>Othr</option>
+				<option>TenC</option>
+				<option>nan</option>
+		</select>
+	 </p>
+	 <p>
+			<button type="save"  class="btn btn-default" style="background-color: rgb(41, 5, 5); color: azure;">Submit</button> 
+		</p>
+		</form>
+
+</body>
+<!--
+<script language="javascript">
+    function WriteToFile(passForm) {
+		var fileLoc = "E:\\House_Price_Prediction\\data.csv";
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+     
+      var file = fso.CreateTextFile(fileLoc, true);
+	  file.writeline('hello');
+     file.writeline(passForm.houstyle.value + ',' +
+                     passForm.roofstyle.value + ',' + 
+					 passForm.neighbor.value + ',' +
+                     passForm.garage.value + ',' + 
+					 passForm.saletype.value + ',' +
+                     passForm.salecondition.value + ',' + 
+					 passForm.electrical.value + ',' +
+                     passForm.heating.value + ',' + 
+					 passForm.KitchenQual.value + ',' +
+                     passForm.misc.value);
+
+      file.Close();
+      alert('File created successfully at location: ' + fileLoc);
+     }
+  </script>-->
+</html>

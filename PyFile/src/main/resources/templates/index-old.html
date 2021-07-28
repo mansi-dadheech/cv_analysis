@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><title>Prediction Page</title></head>
+<body>
+    <h1>HI TANISHKA :), ye mnsi 2 kodi ki h</h1>
+    <form action="#" th:action="@{/save}"
+						 th:object="${house}" method="POST">
+			<input type="text" th:field="*{houseStyle}"
+					class = "form-control mb-4 col-2" placeholder = "First Name"/>
+			<br>
+			<input type="text" th:field="*{roofStyle}"
+					class = "form-control mb-4 col-2" placeholder = "Last Name"/>
+			<br>
+			<input type="text" th:field="*{neighbourhood}"
+					class = "form-control mb-4 col-2" placeholder = "email"/>					
+			<br>
+			<input type="text" th:field="*{garageType}"
+			class = "form-control mb-4 col-2" placeholder = "email"/>
+			<br>
+			<input type="text" th:field="*{saleType}"
+					class = "form-control mb-4 col-2" placeholder = "email"/>
+			<br>
+			<input type="text" th:field="*{saleCondition}"
+					class = "form-control mb-4 col-2" placeholder = "email"/>
+			<br>		
+			<input type="text" th:field="*{electrical}"
+					class = "form-control mb-4 col-2" placeholder = "email"/>
+			<br>		
+			<input type="text" th:field="*{heating}"
+					class = "form-control mb-4 col-2" placeholder = "email"/>
+			<br>
+			<input type="text" th:field="*{kitchenQual}"
+					class = "form-control mb-4 col-2" placeholder = "email"/>
+			<br>
+			<input type="text" th:field="*{misc}"
+					class = "form-control mb-4 col-2" placeholder = "email"/>
+			<br>
+			<button type="save" class = "btn btn-info col-2">Submit</button> 
+		</form>
+
+</body>
+<!--
+<script language="javascript">
+    function WriteToFile(passForm) {
+		var fileLoc = "E:\\House_Price_Prediction\\data.csv";
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+     
+      var file = fso.CreateTextFile(fileLoc, true);
+	  file.writeline('hello');
+     file.writeline(passForm.houstyle.value + ',' +
+                     passForm.roofstyle.value + ',' + 
+					 passForm.neighbor.value + ',' +
+                     passForm.garage.value + ',' + 
+					 passForm.saletype.value + ',' +
+                     passForm.salecondition.value + ',' + 
+					 passForm.electrical.value + ',' +
+                     passForm.heating.value + ',' + 
+					 passForm.KitchenQual.value + ',' +
+                     passForm.misc.value);
+
+      file.Close();
+      alert('File created successfully at location: ' + fileLoc);
+     }
+  </script>-->
+</html>

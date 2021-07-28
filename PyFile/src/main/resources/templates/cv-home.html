@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Analysis</title>   
+	<link th:href="@{/css/cv_home.css}" rel="stylesheet">
+    <th:link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" >
+    <link th:href="@{css/imgUpload.css}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="image">
+		<h1 style="color: gray; background-color: rgb(36, 34, 34); font-family: 'Open Sans', sans-serif; font-size: 250%; margin-top: -15%; 
+        margin-left: 2%;margin-right: 70%; padding: 5% 5% 5% 5%;" >CV Analysis</h1>
+	</div>
+
+    <hr class="hr1">
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a th:href="@{/admin}">Admin</a>
+    </div> 
+    <div class="btn">
+        <div sec:authorize="isAuthenticated()">
+            <form action="#" method="POST" th:action="@{/logout}">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+</div>
+    <hr class="hr2">
+
+<!--
+        <label><b>Select Company</b></label>
+        <div class="box">
+        <select id="standard-select">
+            <option value="Option 0">--Select--</option>
+            <option value="Option 1">Accenture Services Pvt Ltd</option>
+            <option value="Option 2">Adobe Systems</option>
+            <option value="Option 3">Alepo Technologies</option>
+            <option value="Option 4">Amazon.com</option>
+            <option value="Option 5">Amber Softech Systems</option>
+            <option value="Option 6">Amdocs Development Centre India</option>
+            <option value="Option 7">App Perfect</option>
+            <option value="Option 8">AthenaHealth</option>
+            <option value="Option 9">Bildesk</option>
+            <option value="Option 10">BNY Mellon</option>
+            <option value="Option 11">Capgemini</option>
+            <option value="Option 12">Celebal Technologies</option>
+            <option value="Option 13">Cognizant</option>
+            <option value="Option 14">Dell India</option>
+            <option value="Option 15">HCL Technologies</option>
+            <option value="Option 16">Hewlett-Packard India</option>
+            <option value="Option 17">Hexaware Technologies</option>
+            <option value="Option 18">Honeywell</option>
+            <option value="Option 19">IBM India</option>
+            <option value="Option 20">Infosys</option>
+            <option value="Option 21">Intel India</option>
+            <option value="Option 22">Larsen & Toubro Infotech</option>
+            <option value="Option 23">Microsoft</option>
+            <option value="Option 24">Mindtree</option>
+            <option value="Option 25">Miniorange Security Software Pvt Ltd</option>
+            <option value="Option 26">Mphasis</option>
+            <option value="Option 27">Optum Global Solutions</option>
+            <option value="Option 28">Oracle Financial Services Software</option>
+            <option value="Option 29">Pratham Software</option>
+            <option value="Option 30">Skillrock</option>
+            <option value="Option 31">Tata Consultancy Services</option>
+            <option value="Option 32">Tech Mahindra</option>
+            <option value="Option 33">Wipro</option>
+            <option value="Option 34">Xooa Technologies</option>
+            <option value="Option 35">Yagna</option>
+            <option value="Option 36">Zensar Technologies</option>
+        
+            
+        </select>
+        </div>
+-->
+
+      
+    <div class="container-fluid mt-7">
+        <div class="row mb-6">
+            <div class="col-lg-12 mb-lg-0 mb-5 pr-lg-12">
+                <section class="mb-10">
+                    <div class="wrapper">
+                         <div class="container">
+                            <h1>Upload a file</h1>
+                                <div class="upload-container">
+                                   <div class="border-container">
+                                        <div class="icons fa-4x">
+                                            <i class="fas fa-file-image" data-fa-transform="shrink-3 down-2 left-6 rotate--45"></i>
+                                            
+                                        </div>
+                                        <!--<input type="file" id="file-upload">-->
+                                        <p>Click on the "Choose File" button to upload resume:</p><br>
+
+                                        <form method="post" enctype="multipart/form-data" action="#" th:action="@{/save}">
+	                                        <input type="file" id="file" name="file">
+	                                        <button type="submit">Upload</button>
+                                        </form>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+            
+        </div>
+    </div>
+  
+</body>
+</html>
